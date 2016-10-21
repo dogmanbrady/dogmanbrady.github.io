@@ -1,0 +1,50 @@
+<html>
+  <head>
+   <title>
+   RPS
+   </title>
+  </head>
+     <body>
+         
+         <script>
+             /* TODO:
+             -user inout
+             -output
+             -"decorations"
+             -score randomiser*/
+        // variables for holding choices 
+        var choice1 = "rock"; 
+        var choice2 = "paper";
+        var choice3 = "scissors";
+         
+        // variables for holding score 
+         var humanscore = 0;
+         var computerscore = 0;
+             
+        // variables for holding choices
+         var humanChoice = "";
+         var computerChoice = "";
+         
+             
+         function doTurn() {
+             humanchoice = "paper";
+             computerChoice ="paper";
+             
+             if (humanChoice === computerChoice) { // TODO: makes draw
+             console.log ("Draw");
+            }
+            else if (humanchoice === "rock"
+                    && computerChoice === "scissors" ||
+                    humanChoice === "scissors" &&
+                    computerChoice === "paper" ||
+                    humanChoice === "paper" &&
+                    computerChoice === "rock") { //win
+            console.log("Win");
+            } 
+                    
+             
+         
+         </script>
+     
+     </body>
+    </html>
