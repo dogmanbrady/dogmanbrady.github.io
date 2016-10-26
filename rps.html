@@ -1,50 +1,71 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-   <title>
-   RPS
-   </title>
+    <title>Rock, paper, scissors</title>
   </head>
-     <body>
+  <body>
+      <h1> Rock, Paper, Scissors</h1>
+      <a href="#" onclick="doTurn('rock');">Choose Rock</a><br>
+        <a href="#" onclick="doTurn('paper');">Choose Paper</a><br>
+          <a href="#" onclick="doTurn('scissors');">Choose Scissors</a><br>
+      <div id="output">     </div>
+      
+    
+    <script>
+      /* TODO: 
+        -user input
+        -score increments
+        -add output other than console ------- DONE
+        -move script to external file
+      */
+
+      // string variables to hold possible choices
+      // we'll use these later on
+      var choice1 = "rock";
+      var choice2 = "paper";
+      var choice3 = "scissors";
+
+      // number variables to hold the scores
+      var humanScore = 0;
+      var computerScore = 0;
+      
+      // string variables to hold the choices
+      var humanChoice = "";
+      var computerChoice = "";
+    
+      // Variable to hold string output
+      var output = "";
+        
+      function doTurn(humanChoice) {
+
+         computerChoice = "rock"; // try changing these values to test!
          
-         <script>
-             /* TODO:
-             -user inout
-             -output
-             -"decorations"
-             -score randomiser*/
-        // variables for holding choices 
-        var choice1 = "rock"; 
-        var choice2 = "paper";
-        var choice3 = "scissors";
-         
-        // variables for holding score 
-         var humanscore = 0;
-         var computerscore = 0;
+         if (humanChoice === computerChoice) { // Draw
+            console.log("Draw!"); 
+            output = "Draw";
+         }
+         else if (humanChoice === "rock" && computerChoice === "scissors" ||
+                 humanChoice === "scissors" && computerChoice === "paper" ||
+                 humanChoice === "paper" && computerChoice === "rock") { 
+                 // Human won
+            console.log("You win!"); 
+            output = "win";
+             humanScore++;
+      
+         }
+         else { // Human lost--no need to check by process of elimination
+            console.log("You lose!");
+            output = "lose";
+             computerScore += 1;
              
-        // variables for holding choices
-         var humanChoice = "";
-         var computerChoice = "";
-         
-             
-         function doTurn() {
-             humanchoice = "paper";
-             computerChoice ="paper";
-             
-             if (humanChoice === computerChoice) { // TODO: makes draw
-             console.log ("Draw");
-            }
-            else if (humanchoice === "rock"
-                    && computerChoice === "scissors" ||
-                    humanChoice === "scissors" &&
-                    computerChoice === "paper" ||
-                    humanChoice === "paper" &&
-                    computerChoice === "rock") { //win
-            console.log("Win");
-            } 
-                    
-             
-         
-         </script>
-     
-     </body>
-    </html>
+      
+         }
+          output += "<br>" + humanScore;
+          document.getElementById("output").innerHTML = output;
+      
+      }
+      
+    </script>
+    
+  </body>
+</html>
